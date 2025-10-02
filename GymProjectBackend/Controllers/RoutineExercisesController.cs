@@ -1,0 +1,75 @@
+﻿using GymProjectBackend.Entities;
+using GymProjectBackend.Models.RoutineExercises;
+using GymProjectBackend.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+
+namespace GymProjectBackend.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RoutineExercisesController(IRoutineExercisesService routineExercisesService) : ControllerBase
+    {
+        [Authorize]
+        [HttpGet("{routineExerciseId}")]
+        public async Task<ActionResult<RoutineExercisesResponseDTO>> GetRoutineExercises([FromRoute]Guid routineExerciseId)
+        {
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userIdString is null)
+                return Unauthorized();
+
+            var result = await routineExercisesService.GetRoutineExerciseAsync(routineExerciseId);
+
+            if (result is null)
+                return NotFound();
+
+            return result;
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<ActionResult<RoutineExercises?>> CreateRoutineExercises(RoutineExerciseDTO request)
+        {
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userIdString is null)
+                return Unauthorized();
+
+            var response = await routineExercisesService.CreateRoutineExerciseAsync(request);
+
+            return Ok(response);
+        }
+
+        [Authorize]
+        [HttpPut]
+        public async Task<ActionResult<RoutineExercisesResponseDTO?>> EditRoutineExercises(RoutineExerciseEditDTO request)
+        {
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userIdString is null)
+                return Unauthorized();
+
+            var result = await routineExercisesService.UpdateRoutineExerciseAsync(request);
+
+            if (result is null)
+                return BadRequest();
+
+            return result;
+        }
+
+        [Authorize]
+        [HttpDelete("{routineExerciseId}")]
+        public async Task<ActionResult<string?>> DeleteRoutineExercises([FromRoute] Guid routineExerciseId)
+        {
+            var result = await routineExercisesService.DeleteRoutineExerciseAsync(routineExerciseId);
+
+            if (result is null)
+                return NotFound();
+
+            return result;
+        }
+    }
+}

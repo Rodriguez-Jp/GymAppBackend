@@ -1,0 +1,276 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\controllers\\routineexercisescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\controllers\\routineexercisescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\services\\routineexercisesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\services\\routineexercisesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\models\\routine\\routineeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\models\\routine\\routineeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\models\\routineexercises\\routineexerciseeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\models\\routineexercises\\routineexerciseeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\services\\iroutineexercisesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\services\\iroutineexercisesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\entities\\routineexercises.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\entities\\routineexercises.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\services\\routineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\services\\routineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\migrations\\20250824204738_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\migrations\\20250824204738_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\entities\\routine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\entities\\routine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\models\\routineexercises\\routineexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\models\\routineexercises\\routineexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\controllers\\routinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\controllers\\routinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\data\\gymappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\data\\gymappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\services\\iroutineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\services\\iroutineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|c:\\users\\jp\\desktop\\c#\\projects\\gymapp\\gymprojectbackend\\gymprojectbackend\\models\\routineexercises\\routineexercisesresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF64562-098F-4BAD-8748-C7FE2E7FB3C3}|GymProjectBackend\\GymProjectBackend.csproj|solutionrelative:gymprojectbackend\\models\\routineexercises\\routineexercisesresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoutineExerciseEditDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseEditDTO.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseEditDTO.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseEditDTO.cs",
+              "RelativeToolTip": "GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseEditDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T12:06:23.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RoutineEditDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\Routine\\RoutineEditDTO.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Models\\Routine\\RoutineEditDTO.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\Routine\\RoutineEditDTO.cs",
+              "RelativeToolTip": "GymProjectBackend\\Models\\Routine\\RoutineEditDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T12:05:25.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoutineExercisesService.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\RoutineExercisesService.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Services\\RoutineExercisesService.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\RoutineExercisesService.cs",
+              "RelativeToolTip": "GymProjectBackend\\Services\\RoutineExercisesService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:11:12.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IRoutineExercisesService.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\IRoutineExercisesService.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Services\\IRoutineExercisesService.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\IRoutineExercisesService.cs",
+              "RelativeToolTip": "GymProjectBackend\\Services\\IRoutineExercisesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:10:58.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoutineExercisesController.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Controllers\\RoutineExercisesController.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Controllers\\RoutineExercisesController.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Controllers\\RoutineExercisesController.cs",
+              "RelativeToolTip": "GymProjectBackend\\Controllers\\RoutineExercisesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:10:17.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoutineExercises.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Entities\\RoutineExercises.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Entities\\RoutineExercises.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Entities\\RoutineExercises.cs",
+              "RelativeToolTip": "GymProjectBackend\\Entities\\RoutineExercises.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:01:19.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20250824204738_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Migrations\\20250824204738_InitialMigration.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Migrations\\20250824204738_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Migrations\\20250824204738_InitialMigration.cs",
+              "RelativeToolTip": "GymProjectBackend\\Migrations\\20250824204738_InitialMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T15:53:11.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoutineExerciseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseDTO.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseDTO.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseDTO.cs",
+              "RelativeToolTip": "GymProjectBackend\\Models\\RoutineExercises\\RoutineExerciseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T15:28:25.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoutineService.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\RoutineService.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Services\\RoutineService.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\RoutineService.cs",
+              "RelativeToolTip": "GymProjectBackend\\Services\\RoutineService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:35:19.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Routine.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Entities\\Routine.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Entities\\Routine.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Entities\\Routine.cs",
+              "RelativeToolTip": "GymProjectBackend\\Entities\\Routine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T15:48:50.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Program.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Program.cs",
+              "RelativeToolTip": "GymProjectBackend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T01:00:23.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RoutineExercisesResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\RoutineExercises\\RoutineExercisesResponseDTO.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Models\\RoutineExercises\\RoutineExercisesResponseDTO.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Models\\RoutineExercises\\RoutineExercisesResponseDTO.cs",
+              "RelativeToolTip": "GymProjectBackend\\Models\\RoutineExercises\\RoutineExercisesResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:12:17.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RoutineController.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Controllers\\RoutineController.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Controllers\\RoutineController.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Controllers\\RoutineController.cs",
+              "RelativeToolTip": "GymProjectBackend\\Controllers\\RoutineController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwC0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:52:21.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IRoutineService.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\IRoutineService.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Services\\IRoutineService.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Services\\IRoutineService.cs",
+              "RelativeToolTip": "GymProjectBackend\\Services\\IRoutineService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:49:26.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GymAppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Data\\GymAppDbContext.cs",
+              "RelativeDocumentMoniker": "GymProjectBackend\\Data\\GymAppDbContext.cs",
+              "ToolTip": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymProjectBackend\\GymProjectBackend\\Data\\GymAppDbContext.cs",
+              "RelativeToolTip": "GymProjectBackend\\Data\\GymAppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:24:54.582Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
