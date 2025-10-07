@@ -9,7 +9,7 @@ namespace GymProjectBackend.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class ExerciseController(IExerciseService exerciseService) : ControllerBase
+    public class ExercisesController(IExerciseService exerciseService) : ControllerBase
     {
         [Authorize]
         [HttpGet("{id}")]
