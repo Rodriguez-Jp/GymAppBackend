@@ -19,6 +19,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+var jwtSecretKey = builder.Configuration["Jwt:TokenKey"];
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -30,13 +33,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidAudience = builder.Configuration["AppSettings:Audience"],
             ValidateLifetime = true,
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!)),
+                Encoding.UTF8.GetBytes(builder.Configuration[jwtSecretKey]!)),
             ValidateIssuerSigningKey = true
         };
     });
 
+var baseConnectionString = builder.Configuration.GetConnectionString("GymAppDb");
+var password = builder.Configuration["DBPassword"];
+var fullConnectionString = $"{baseConnectionString}{password}";
+
 builder.Services.AddDbContext<GymAppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("GymAppDb")));
+    options.UseNpgsql(fullConnectionString));
 
 builder.Services.AddOpenApi();
 

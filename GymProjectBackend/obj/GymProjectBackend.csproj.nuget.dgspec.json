@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymAppBackend\\GymProjectBackend\\GymProjectBackend.csproj": {}
+    "/home/jp/Desktop/Projects/GymApp/GymAppBackend/GymProjectBackend/GymProjectBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymAppBackend\\GymProjectBackend\\GymProjectBackend.csproj": {
+    "/home/jp/Desktop/Projects/GymApp/GymAppBackend/GymProjectBackend/GymProjectBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymAppBackend\\GymProjectBackend\\GymProjectBackend.csproj",
+        "projectUniqueName": "/home/jp/Desktop/Projects/GymApp/GymAppBackend/GymProjectBackend/GymProjectBackend.csproj",
         "projectName": "GymProjectBackend",
-        "projectPath": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymAppBackend\\GymProjectBackend\\GymProjectBackend.csproj",
-        "packagesPath": "C:\\Users\\Jp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jp\\Desktop\\C#\\Projects\\GymApp\\GymAppBackend\\GymProjectBackend\\obj\\",
+        "projectPath": "/home/jp/Desktop/Projects/GymApp/GymAppBackend/GymProjectBackend/GymProjectBackend.csproj",
+        "packagesPath": "/home/jp/.nuget/packages/",
+        "outputPath": "/home/jp/Desktop/Projects/GymApp/GymAppBackend/GymProjectBackend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/jp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -86,6 +86,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -94,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Jp\\.dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
