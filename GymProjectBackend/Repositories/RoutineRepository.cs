@@ -1,0 +1,51 @@
+using GymProjectBackend.Data;
+using GymProjectBackend.Entities;
+using GymProjectBackend.Models.Routine;
+
+namespace GymProjectBackend.Repositories;
+
+public class RoutineRepository(GymAppDbContext context) : IRoutineRepository
+{
+    public async Task<Routine?> CreateRoutineAsync(Routine routine)
+    {
+        await context.Routines.AddAsync(routine);
+        await context.SaveChangesAsync();
+        return routine;
+    }
+
+    public async Task<string?> DeleteRoutineAsync(Routine routine)
+    {
+        try
+        {
+            context.Routines.Remove(routine);
+            await context.SaveChangesAsync();
+            return "Routine Deleted";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
+    }
+
+    public async Task<string?> EditRoutineAsync()
+    {
+        try
+        {   
+            await context.SaveChangesAsync();
+            return "Routine updated";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    public async Task<Routine?> GetRoutineByIdAsync(Guid routineId)
+    {
+        var response = await context.Routines.FindAsync(routineId);
+        return response;
+    }
+}

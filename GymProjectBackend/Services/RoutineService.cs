@@ -1,14 +1,15 @@
 ﻿using GymProjectBackend.Data;
 using GymProjectBackend.Entities;
 using GymProjectBackend.Models.Routine;
+using GymProjectBackend.Repositories;
 
 namespace GymProjectBackend.Services
 {
-    public class RoutineService(GymAppDbContext context) : IRoutineService
+    public class RoutineService(IRoutineRepository routineRepository, IAuthRepository authRepository) : IRoutineService
     {
         public async Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId)
         {
-            var routine = await context.Routines.FindAsync(routineId);
+            var routine = await routineRepository.GetRoutineByIdAsync(routineId);
 
             if (routine is null)
             {
@@ -29,49 +30,61 @@ namespace GymProjectBackend.Services
                 UserId = userId
             };
 
-            await context.Routines.AddAsync(routine);
+            try
+            {
+                var response = await routineRepository.CreateRoutineAsync(routine);
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
-            await context.SaveChangesAsync();
-
-            return routine;
+            
 
         }
 
         public async Task<string?> DeleteRoutineAsync(RoutineDeleteDTO request, Guid userId)
         {
-            var routine = await context.Routines.FindAsync(request.RoutineId);
-            var user = await context.Users.FindAsync(userId);
+            var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
+            var user = await authRepository.GetUserByIdAsync(userId);
 
             if(routine is null || user is null)
             {
                 return null;
             }
 
-            context.Routines.Remove(routine);
-
-            await context.SaveChangesAsync();
-
-            return "Routine deleted";
+            try
+            {
+                var response = await routineRepository.DeleteRoutineAsync(routine);
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
 
         public async Task<string?> EditRoutineAsync(RoutineEditDTO request, Guid userId)
         {
-            var routine = await context.Routines.FindAsync(request.RoutineId);
-            var user = await context.Users.FindAsync(userId);
+            var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
+            var user = await authRepository.GetUserByIdAsync(userId);
 
             if (routine is null || user is null)
             {
                 return null;
             }
-
+            
             //if request.name or request.description is empty, keep the same name
-
             routine.Name = request.RoutineName.Trim() == "" ? routine.Name : request.RoutineName;
             routine.Description = request.Description.Trim() == "" ? routine.Description : request.Description;
 
-            await context.SaveChangesAsync();
+            var response = await routineRepository.EditRoutineAsync();
+            return response;
 
-            return "Routine deleted";
         }
 
         private RoutineResponseDTO MapToRoutineResponseDTO(Routine routine)
