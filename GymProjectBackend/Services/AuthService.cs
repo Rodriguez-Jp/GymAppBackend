@@ -8,14 +8,15 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using GymProjectBackend.Repositories;
 
 namespace GymProjectBackend.Services
 {
-    public class AuthService(GymAppDbContext context, IConfiguration configuration) : IAuthService
+    public class AuthService(IUserRepository userRepository, IConfiguration configuration) : IAuthService
     {
         public async Task<TokenResponseDTO?> LoginAsync(UserDTO request)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+            var user = await userRepository.GetByUsername(request);
             if (user is null)
             {
                 return null;
@@ -38,7 +39,7 @@ namespace GymProjectBackend.Services
 
         public async Task<User?> RegisterAsync(UserDTO request)
         {
-            if(await context.Users.AnyAsync(u => u.Username == request.Username))
+            if(await userRepository.UserExistAsync(request))
             {
                 return null;
             }
@@ -50,9 +51,7 @@ namespace GymProjectBackend.Services
             user.Username = request.Username;
             user.PasswordHash = hashedPassword;
 
-            context.Users.Add(user);
-
-            await context.SaveChangesAsync();
+            await userRepository.RegisterAsync(user);
 
             return user;
         }
@@ -96,7 +95,7 @@ namespace GymProjectBackend.Services
 
         private async Task<User?> ValidateRefreshToken(Guid userId, string refreshToken)
         {
-            var user = await context.Users.FindAsync(userId);
+            var user = await userRepository.GetUserByIdAsync(userId);
 
             if (user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
             {
@@ -122,9 +121,12 @@ namespace GymProjectBackend.Services
 
             user.RefreshToken = refreshToken;
             user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
-            await context.SaveChangesAsync();
 
-            return refreshToken;
+            if (await userRepository.SaveChangesAsync())
+            {
+                return refreshToken;
+            }
+            return "There was an error creating your token";
         }
     }
 }

@@ -1,24 +1,21 @@
-﻿using GymProjectBackend.Data;
-using GymProjectBackend.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using GymProjectBackend.Entities;
+using GymProjectBackend.Repositories;
+
 
 namespace GymProjectBackend.Services
 {
-    public class ExerciseService(GymAppDbContext context) : IExerciseService
+    public class ExerciseService(IExerciseRepository exerciseRepository) : IExerciseService
     {
         public async Task<Exercise?> GetExerciseAsync(Guid id)
         {
-            var exercise = await context.Exercises.FindAsync(id);
+            var exercise = await exerciseRepository.GetExerciseByIdAsync(id);
 
-            if (exercise is null)
-                return null;
-
-            return exercise;
+            return exercise ?? null;
         }
 
         public async Task<List<Exercise>> GetAllExercisesAsync()
         {
-            var allExercises= await context.Exercises.ToListAsync();
+            var allExercises= await exerciseRepository.GetAllExercisesAsync();
             return allExercises;
         }
     }

@@ -53,7 +53,7 @@ builder.Services.AddScoped<IRoutineService, RoutineService>();
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
 builder.Services.AddScoped<IRoutineExercisesService, RoutineExercisesService>();
 builder.Services.AddScoped<IRoutineRepository, RoutineRepository>();
-builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 var app = builder.Build();

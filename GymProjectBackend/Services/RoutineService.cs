@@ -5,7 +5,7 @@ using GymProjectBackend.Repositories;
 
 namespace GymProjectBackend.Services
 {
-    public class RoutineService(IRoutineRepository routineRepository, IAuthRepository authRepository) : IRoutineService
+    public class RoutineService(IRoutineRepository routineRepository, IUserRepository userRepository) : IRoutineService
     {
         public async Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId)
         {
@@ -16,7 +16,7 @@ namespace GymProjectBackend.Services
                 return null;
             }
 
-            var response = MapToRoutineResponseDTO(routine);
+            var response = MapToRoutineResponseDto(routine);
 
 
             return response;
@@ -48,7 +48,7 @@ namespace GymProjectBackend.Services
         public async Task<string?> DeleteRoutineAsync(RoutineDeleteDTO request, Guid userId)
         {
             var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
-            var user = await authRepository.GetUserByIdAsync(userId);
+            var user = await userRepository.GetUserByIdAsync(userId);
 
             if(routine is null || user is null)
             {
@@ -71,7 +71,7 @@ namespace GymProjectBackend.Services
         public async Task<string?> EditRoutineAsync(RoutineEditDTO request, Guid userId)
         {
             var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
-            var user = await authRepository.GetUserByIdAsync(userId);
+            var user = await userRepository.GetUserByIdAsync(userId);
 
             if (routine is null || user is null)
             {
@@ -87,7 +87,7 @@ namespace GymProjectBackend.Services
 
         }
 
-        private RoutineResponseDTO MapToRoutineResponseDTO(Routine routine)
+        private RoutineResponseDTO MapToRoutineResponseDto(Routine routine)
         {
             return new RoutineResponseDTO
             {
