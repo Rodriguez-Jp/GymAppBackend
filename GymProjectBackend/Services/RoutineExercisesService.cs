@@ -57,7 +57,7 @@ namespace GymProjectBackend.Services
             if (routineExercises is null)
                 return null;
 
-            routineExercises.Reps = request.Reps.Trim() == string.Empty ? routineExercises.Reps : request.Reps.Trim();
+            routineExercises.Reps = request.Reps == 0 ? routineExercises.Reps : request.Reps;
             routineExercises.Weight = request.Weight < 0 ? routineExercises.Weight : request.Weight;
 
             await context.SaveChangesAsync();

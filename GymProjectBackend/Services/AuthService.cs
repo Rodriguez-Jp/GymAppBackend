@@ -66,7 +66,7 @@ namespace GymProjectBackend.Services
             };
 
             var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(configuration.GetValue<string>("AppSettings:Token")!));
+                Encoding.UTF8.GetBytes(configuration.GetValue<string>("Jwt:TokenKey")!));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
 
