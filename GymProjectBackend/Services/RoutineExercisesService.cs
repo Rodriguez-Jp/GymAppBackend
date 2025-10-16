@@ -3,24 +3,22 @@ using GymProjectBackend.Entities;
 using GymProjectBackend.Models.Exercise;
 using GymProjectBackend.Models.Routine;
 using GymProjectBackend.Models.RoutineExercises;
+using GymProjectBackend.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymProjectBackend.Services
 {
-    public class RoutineExercisesService (GymAppDbContext context) : IRoutineExercisesService
+    public class RoutineExercisesService (IRoutineExercisesRepository routineExercisesRepository, IExerciseRepository exerciseRepository, IRoutineRepository routineRepository) : IRoutineExercisesService
     {
         //Get handler
         public async Task<RoutineExercisesResponseDTO?> GetRoutineExerciseAsync(Guid routineExerciseId)
         {
-            var routineExercise = await context.RoutineExercises
-                .Include(re => re.Routine)
-                .Include(re => re.Exercise)
-                .FirstOrDefaultAsync(re => re.Id == routineExerciseId);
+            var routineExercise = await routineExercisesRepository.GetFullRoutineExercisesById(routineExerciseId);
 
             if (routineExercise is null)
                 return null;
 
-            var response = MapToRoutineExercisesDTO(routineExercise);
+            var response = MapToRoutineExercisesDto(routineExercise);
 
             return response;
 
@@ -33,26 +31,28 @@ namespace GymProjectBackend.Services
             var routine = new RoutineExercises
             {
                 RoutineId = request.RoutineId,
-                Routine = await context.Routines.FindAsync(request.RoutineId),
+                Routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId),
                 ExerciseId = request.ExerciseId,
-                Exercise = await context.Exercises.FindAsync(request.ExerciseId),
+                Exercise = await exerciseRepository.GetExerciseByIdAsync(request.ExerciseId),
                 Weight = request.Weight,
                 Reps = request.Reps
             };
 
-            await context.RoutineExercises.AddAsync(routine);
-            await context.SaveChangesAsync();
+            if (await routineExercisesRepository.NewRoutineExercise(routine))
+            {
+                return routine;
+            }
 
-            return routine;
+            return null;
+
+
         }
         
         //Put handler
         public async Task<RoutineExercisesResponseDTO?> UpdateRoutineExerciseAsync(RoutineExerciseEditDTO request)
         {
-            var routineExercises = await context.RoutineExercises
-                .Include(re => re.Routine)
-                .Include(re => re.Exercise)
-                .FirstOrDefaultAsync(re => re.Id == request.Id);
+            
+            var routineExercises = await routineExercisesRepository.GetFullRoutineExercisesById(request.Id);
 
             if (routineExercises is null)
                 return null;
@@ -60,29 +60,30 @@ namespace GymProjectBackend.Services
             routineExercises.Reps = request.Reps == 0 ? routineExercises.Reps : request.Reps;
             routineExercises.Weight = request.Weight < 0 ? routineExercises.Weight : request.Weight;
 
-            await context.SaveChangesAsync();
+            await routineExercisesRepository.SaveChangesAsync();
 
-            var response = MapToRoutineExercisesDTO(routineExercises);
+            var response = MapToRoutineExercisesDto(routineExercises);
 
             return response;
         }
 
         public async Task<string?> DeleteRoutineExerciseAsync(Guid routineExerciseId)
         {
-            var routineExercise = await context.RoutineExercises.FindAsync(routineExerciseId);
+            var routineExercise = await routineExercisesRepository.GetRoutineExercisesById(routineExerciseId);
 
             if (routineExercise is null)
                 return null;
 
-            context.RoutineExercises.Remove(routineExercise);
+            if (await routineExercisesRepository.DeleteRoutineExercise(routineExercise))
+            {
+                return "Routine Exercise Deleted";
+            }
 
-            await context.SaveChangesAsync();
-
-            return "Routine Exercise Deleted";
+            return null;
 
         }
 
-        private RoutineExercisesResponseDTO MapToRoutineExercisesDTO(RoutineExercises routineExercises)
+        private RoutineExercisesResponseDTO MapToRoutineExercisesDto(RoutineExercises routineExercises)
         {
             return new RoutineExercisesResponseDTO
             {
