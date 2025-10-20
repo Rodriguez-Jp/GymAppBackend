@@ -11,7 +11,7 @@ namespace GymProjectBackend.Services
     public class RoutineExercisesService (IRoutineExercisesRepository routineExercisesRepository, IExerciseRepository exerciseRepository, IRoutineRepository routineRepository) : IRoutineExercisesService
     {
         //Get handler
-        public async Task<RoutineExercisesResponseDTO?> GetRoutineExerciseAsync(Guid routineExerciseId)
+        public async Task<RoutineExercisesResponseDTO?> GetRoutineExerciseAsync(Guid routineExerciseId, Guid userId)
         {
             var routineExercise = await routineExercisesRepository.GetFullRoutineExercisesById(routineExerciseId);
 
@@ -25,7 +25,7 @@ namespace GymProjectBackend.Services
 
         }
         //Post handler
-        public async Task<RoutineExercises?> CreateRoutineExerciseAsync(RoutineExerciseDTO request)
+        public async Task<RoutineExercises?> CreateRoutineExerciseAsync(RoutineExerciseDTO request, Guid userId)
         {
 
             var routine = new RoutineExercises
@@ -49,7 +49,8 @@ namespace GymProjectBackend.Services
         }
         
         //Put handler
-        public async Task<RoutineExercisesResponseDTO?> UpdateRoutineExerciseAsync(RoutineExerciseEditDTO request)
+        public async Task<RoutineExercisesResponseDTO?> UpdateRoutineExerciseAsync(RoutineExerciseEditDTO request,
+            Guid userId)
         {
             
             var routineExercises = await routineExercisesRepository.GetFullRoutineExercisesById(request.Id);
@@ -67,7 +68,7 @@ namespace GymProjectBackend.Services
             return response;
         }
 
-        public async Task<string?> DeleteRoutineExerciseAsync(Guid routineExerciseId)
+        public async Task<string?> DeleteRoutineExerciseAsync(Guid routineExerciseId, Guid userId)
         {
             var routineExercise = await routineExercisesRepository.GetRoutineExercisesById(routineExerciseId);
 

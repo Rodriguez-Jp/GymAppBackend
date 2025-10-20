@@ -262,9 +262,8 @@ namespace GymProjectBackend.Migrations
                     b.Property<Guid>("ExerciseId")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Reps")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Reps")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("RoutineId")
                         .HasColumnType("uuid");

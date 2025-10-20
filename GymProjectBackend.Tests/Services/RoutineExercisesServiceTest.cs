@@ -15,6 +15,7 @@ public class RoutineExercisesServiceTest
     {
         var nonExistentRoutineId = Guid.NewGuid();
         var existingExerciseId = Guid.NewGuid();
+        var userId = Guid.NewGuid();
 
         var request = new RoutineExerciseDTO
         {
@@ -47,7 +48,7 @@ public class RoutineExercisesServiceTest
             mockRoutineRepository.Object
         );
 
-        var result = await service.CreateRoutineExerciseAsync(request);
+        var result = await service.CreateRoutineExerciseAsync(request, userId);
         
         Assert.Null(result);
         mockRoutineExercisesRepository.Verify(

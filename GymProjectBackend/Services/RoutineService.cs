@@ -7,11 +7,13 @@ namespace GymProjectBackend.Services
 {
     public class RoutineService(IRoutineRepository routineRepository, IUserRepository userRepository) : IRoutineService
     {
-        public async Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId)
+        public async Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId, Guid userId)
         {
+            
             var routine = await routineRepository.GetRoutineByIdAsync(routineId);
-
-            if (routine is null)
+            
+            
+            if (routine is null || routine.UserId != userId)
             {
                 return null;
             }
@@ -48,9 +50,8 @@ namespace GymProjectBackend.Services
         public async Task<string?> DeleteRoutineAsync(RoutineDeleteDTO request, Guid userId)
         {
             var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
-            var user = await userRepository.GetUserByIdAsync(userId);
 
-            if(routine is null || user is null)
+            if(routine is null || userId != routine.UserId)
             {
                 return null;
             }
@@ -71,9 +72,8 @@ namespace GymProjectBackend.Services
         public async Task<string?> EditRoutineAsync(RoutineEditDTO request, Guid userId)
         {
             var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
-            var user = await userRepository.GetUserByIdAsync(userId);
 
-            if (routine is null || user is null)
+            if (routine is null || userId != routine.UserId)
             {
                 return null;
             }

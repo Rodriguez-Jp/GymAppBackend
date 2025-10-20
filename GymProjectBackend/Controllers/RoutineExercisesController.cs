@@ -21,7 +21,9 @@ namespace GymProjectBackend.Controllers
             if (userIdString is null)
                 return Unauthorized();
 
-            var result = await routineExercisesService.GetRoutineExerciseAsync(routineExerciseId);
+            var userId = Guid.Parse(userIdString);
+
+            var result = await routineExercisesService.GetRoutineExerciseAsync(routineExerciseId, userId);
 
             if (result is null)
                 return NotFound();
@@ -37,8 +39,10 @@ namespace GymProjectBackend.Controllers
 
             if (userIdString is null)
                 return Unauthorized();
+            
+            var userId = Guid.Parse(userIdString);
 
-            var response = await routineExercisesService.CreateRoutineExerciseAsync(request);
+            var response = await routineExercisesService.CreateRoutineExerciseAsync(request, userId);
 
             return Ok(response);
         }
@@ -51,8 +55,10 @@ namespace GymProjectBackend.Controllers
 
             if (userIdString is null)
                 return Unauthorized();
+            
+            var userId = Guid.Parse(userIdString);
 
-            var result = await routineExercisesService.UpdateRoutineExerciseAsync(request);
+            var result = await routineExercisesService.UpdateRoutineExerciseAsync(request, userId);
 
             if (result is null)
                 return BadRequest();
@@ -64,7 +70,14 @@ namespace GymProjectBackend.Controllers
         [HttpDelete("{routineExerciseId}")]
         public async Task<ActionResult<string?>> DeleteRoutineExercises([FromRoute] Guid routineExerciseId)
         {
-            var result = await routineExercisesService.DeleteRoutineExerciseAsync(routineExerciseId);
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userIdString is null)
+                return Unauthorized();
+            
+            var userId = Guid.Parse(userIdString);
+
+            var result = await routineExercisesService.DeleteRoutineExerciseAsync(routineExerciseId, userId);
 
             if (result is null)
                 return NotFound();

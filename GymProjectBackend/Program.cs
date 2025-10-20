@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using System.Text;
 using System.Text.Json.Serialization;
+using GymProjectBackend.Entities;
 using GymProjectBackend.Repositories;
 
 
@@ -54,6 +55,8 @@ builder.Services.AddScoped<IExerciseService, ExerciseService>();
 builder.Services.AddScoped<IRoutineExercisesService, RoutineExercisesService>();
 builder.Services.AddScoped<IRoutineRepository, RoutineRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoutineExercisesRepository, RoutineExercisesRepository>();
+builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
 
 
 var app = builder.Build();

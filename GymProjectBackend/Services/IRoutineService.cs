@@ -8,7 +8,7 @@ namespace GymProjectBackend.Services
         Task<Routine?> CreateNewRoutineAsync(RoutineCreateDTO request, Guid userId);
         Task<string?> DeleteRoutineAsync(RoutineDeleteDTO request, Guid userId);
         Task<string?> EditRoutineAsync(RoutineEditDTO request, Guid userId);
-        Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId);
+        Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId, Guid userId);
 
     }
 }

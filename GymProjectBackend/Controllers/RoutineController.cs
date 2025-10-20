@@ -21,7 +21,9 @@ namespace GymProjectBackend.Controllers
             if (userIdString is null)
                 return Unauthorized();
 
-            var routine = await routineService.GetRoutineAsync(id);
+            var userId = Guid.Parse(userIdString);
+            
+            var routine = await routineService.GetRoutineAsync(id, userId);
 
             if (routine is null)
             {
@@ -55,12 +57,12 @@ namespace GymProjectBackend.Controllers
             if (userIdString is null)
                 return Unauthorized();
 
-            var UserId = Guid.Parse(userIdString);
+            var userId = Guid.Parse(userIdString);
 
-            var result = await routineService.DeleteRoutineAsync(request, UserId);
+            var result = await routineService.DeleteRoutineAsync(request, userId);
 
             if (result is null)
-                return BadRequest();
+                return NotFound();
 
             return result;
 
@@ -75,9 +77,9 @@ namespace GymProjectBackend.Controllers
             if (userIdString is null)
                 return Unauthorized();
 
-            var UserId = Guid.Parse(userIdString);
+            var userId = Guid.Parse(userIdString);
 
-            var result = await routineService.EditRoutineAsync(request, UserId);
+            var result = await routineService.EditRoutineAsync(request, userId);
 
             if (result is null)
                 return BadRequest();
