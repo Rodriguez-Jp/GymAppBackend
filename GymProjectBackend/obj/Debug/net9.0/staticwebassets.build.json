@@ -1,1 +1,12 @@
-{"Version":1,"Hash":"6AuPCeV4rXljEk4mQvL4Sl3wDr5ppTfyTznJLx0HwSg=","Source":"GymProjectBackend","BasePath":"_content/GymProjectBackend","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "6AuPCeV4rXljEk4mQvL4Sl3wDr5ppTfyTznJLx0HwSg=",
+  "Source": "GymProjectBackend",
+  "BasePath": "_content/GymProjectBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

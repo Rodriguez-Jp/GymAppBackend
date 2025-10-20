@@ -13,6 +13,8 @@ public class RoutineServiceTest
     [Fact]
     public async Task EditRoutineAsync_UserTriesToEditAnotherUsersRoutine_ReturnsNull()
     {
+        //Creamos el caso de prueba
+        
         var routineId = Guid.NewGuid();
         var routineOwnerId = Guid.NewGuid();
         var maliciousUserId = Guid.NewGuid(); 
@@ -28,8 +30,8 @@ public class RoutineServiceTest
         var request = new RoutineEditDTO
         {
             RoutineId = routineId,
-            RoutineName = "Hacked Name",
-            Description = "Hacked Description"
+            RoutineName = "Routine updated (Wrong user)",
+            Description = "Vulnerable Description"
         };
 
         var mockRoutineRepository = new Mock<IRoutineRepository>();
@@ -49,8 +51,10 @@ public class RoutineServiceTest
 
         var service = new RoutineService(mockRoutineRepository.Object, mockUserRepository.Object);
         
+        //Accionamos
         var result = await service.EditRoutineAsync(request, maliciousUserId);
         
+        //Verificamos
         Assert.Null(result); 
         mockRoutineRepository.Verify(
             r => r.EditRoutineAsync(),
