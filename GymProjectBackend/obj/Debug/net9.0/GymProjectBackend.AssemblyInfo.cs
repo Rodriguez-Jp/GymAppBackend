@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GymProjectBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32d0dca79c571b8dc7e182a4799067047efff4f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e1cee69d208ff92b89f3f99bb4cb9e60cfb43aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("GymProjectBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GymProjectBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
