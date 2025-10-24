@@ -96,11 +96,13 @@ namespace GymProjectBackend.Services
             {
                 Routine = new RoutineResponseDTO
                 {
+                    Id = routineExercises.Routine.Id,
                     RoutineName = routineExercises.Routine.Name,
                     RoutineDescription = routineExercises.Routine.Description
                 },
                 Exercise = new ExerciseResponseDTO
                 {
+                    Id = routineExercises.Exercise.Id,
                     Name = routineExercises.Exercise.Name,
                     Description = routineExercises.Exercise.Description
                 },

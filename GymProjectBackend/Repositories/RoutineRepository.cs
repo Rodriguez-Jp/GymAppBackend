@@ -1,6 +1,7 @@
 using GymProjectBackend.Data;
 using GymProjectBackend.Entities;
 using GymProjectBackend.Models.Routine;
+using Microsoft.EntityFrameworkCore;
 
 namespace GymProjectBackend.Repositories;
 
@@ -45,7 +46,11 @@ public class RoutineRepository(GymAppDbContext context) : IRoutineRepository
 
     public async Task<Routine?> GetRoutineByIdAsync(Guid routineId)
     {
-        var response = await context.Routines.FindAsync(routineId);
+        var response = await context.Routines
+            .Include(r => r.routineExercises)
+            .ThenInclude(re => re.Exercise)
+            .FirstOrDefaultAsync(r => r.Id == routineId);
+        //var response = await context.Routines.FindAsync(routineId);
         return response;
     }
 }
