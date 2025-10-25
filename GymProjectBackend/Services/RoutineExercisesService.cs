@@ -53,14 +53,14 @@ namespace GymProjectBackend.Services
         //Put handler
         public async Task<RoutineExercisesResponseDTO?> UpdateRoutineExerciseAsync(RoutineExerciseEditDTO request, Guid userId)
         {
-            var routine = await routineRepository.GetRoutineByIdAsync(request.RoutineId);
-
-            if (routine is null || routine.UserId != userId)
+            var routineExercises = await routineExercisesRepository.GetFullRoutineExercisesById(request.Id);
+            if (routineExercises is null)
                 return null;
             
-            var routineExercises = await routineExercisesRepository.GetFullRoutineExercisesById(request.Id);
+            //Check auth
+            var routine = await routineRepository.GetRoutineByIdAsync(routineExercises.RoutineId);
 
-            if (routineExercises is null)
+            if (routine is null || routine.UserId != userId)
                 return null;
 
             routineExercises.Reps = request.Reps == 0 ? routineExercises.Reps : request.Reps;
