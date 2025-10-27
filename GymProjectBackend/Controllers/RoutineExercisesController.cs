@@ -64,7 +64,7 @@ namespace GymProjectBackend.Controllers
             var result = await routineExercisesService.UpdateRoutineExerciseAsync(request, userId);
 
             if (result is null)
-                return BadRequest();
+                return NotFound();
 
             return result;
         }
