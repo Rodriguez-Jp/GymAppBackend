@@ -92,6 +92,7 @@ namespace GymProjectBackend.Services
         {
             return new RoutineResponseDTO
             {
+                Id = routine.Id,
                 RoutineName = routine.Name,
                 RoutineDescription = routine.Description,
                 RoutineExercises = routine.routineExercises
