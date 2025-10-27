@@ -14,7 +14,7 @@ namespace GymProjectBackend.Controllers
     {
         [Authorize]
         [HttpGet ("{id}")]
-        public async Task<ActionResult<Routine>> GetRoutine([FromRoute]Guid id)
+        public async Task<ActionResult<Routine>> GetRoutineById([FromRoute]Guid id)
         {
             var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -23,7 +23,7 @@ namespace GymProjectBackend.Controllers
 
             var userId = Guid.Parse(userIdString);
             
-            var routine = await routineService.GetRoutineAsync(id, userId);
+            var routine = await routineService.GetRoutineByIdAsync(id, userId);
 
             if (routine is null)
             {
@@ -31,6 +31,25 @@ namespace GymProjectBackend.Controllers
             }
 
             return Ok(routine);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<ActionResult<List<RoutineResponseDTO>>> GetAllRoutines()
+        {
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userIdString is null)
+                return Unauthorized();
+
+            var userId = Guid.Parse(userIdString);
+
+            var routines = await routineService.GetAllRoutines(userId);
+
+            if (routines is null)
+                return NotFound();
+
+            return routines;
         }
 
         [Authorize]

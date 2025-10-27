@@ -53,4 +53,15 @@ public class RoutineRepository(GymAppDbContext context) : IRoutineRepository
         //var response = await context.Routines.FindAsync(routineId);
         return response;
     }
+
+    public async Task<List<Routine>?> GetAllRoutines(Guid userId)
+    {
+        var response = await context.Routines
+            .Where(u => u.UserId == userId)
+            .Include(r => r.routineExercises)
+            .ThenInclude(re => re.Exercise)
+            .ToListAsync();
+
+        return response;
+    }
 }

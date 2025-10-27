@@ -8,7 +8,7 @@ namespace GymProjectBackend.Services
 {
     public class RoutineService(IRoutineRepository routineRepository, IUserRepository userRepository) : IRoutineService
     {
-        public async Task<RoutineResponseDTO?> GetRoutineAsync(Guid routineId, Guid userId)
+        public async Task<RoutineResponseDTO?> GetRoutineByIdAsync(Guid routineId, Guid userId)
         {
             
             var routine = await routineRepository.GetRoutineByIdAsync(routineId);
@@ -24,6 +24,25 @@ namespace GymProjectBackend.Services
 
             return response;
         }
+
+        public async Task<List<RoutineResponseDTO>?> GetAllRoutines(Guid userId)
+        {
+            var routines = await routineRepository.GetAllRoutines(userId);
+
+            if (routines is null)
+                return null;
+
+            //return routines.Select(routine => MapToRoutineResponseDto(routine)).ToList();
+            var routinesMapped = new List<RoutineResponseDTO>();
+            foreach (var routine in routines)
+            {
+                var routinetest = MapToRoutineResponseDto(routine);
+                routinesMapped.Add(routinetest);
+            }
+
+            return routinesMapped;
+        }
+
         public async Task<Routine?> CreateNewRoutineAsync(RoutineCreateDTO request, Guid userId)
         {
             var routine = new Routine

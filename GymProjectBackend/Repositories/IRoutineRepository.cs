@@ -9,4 +9,5 @@ public interface IRoutineRepository
     Task<string?> DeleteRoutineAsync(Routine routine);
     Task<string?> EditRoutineAsync();
     Task<Routine?> GetRoutineByIdAsync(Guid routineId);
+    Task<List<Routine>?> GetAllRoutines(Guid userId);
 }
