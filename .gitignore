@@ -1,0 +1,47 @@
+# Build results
+**/bin/
+**/obj/
+**/out/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.swp
+*~
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Environment and secrets
+.env
+appsettings.Development.json
+**/appsettings.*.json
+!appsettings.json
+
+# User Secrets
+*.secrets.json
+
+# Docker
+.dockerignore
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

@@ -22,10 +22,12 @@ namespace GymProjectBackend.Services
                 return null;
             }
 
-            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password) == PasswordVerificationResult.Failed)
+            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password) ==
+                PasswordVerificationResult.Failed)
             {
                 return null;
             }
+
 
             return await CreateTokenResponse(user);
 
@@ -34,7 +36,7 @@ namespace GymProjectBackend.Services
         private async Task<TokenResponseDTO?> CreateTokenResponse(User user)
         {
             return new TokenResponseDTO
-            { AccessToken = CreateToken(user), RefreshToken = await GenerateAndSaveTokenAsync(user) };
+            { Username = user.Username ,AccessToken = CreateToken(user), RefreshToken = await GenerateAndSaveTokenAsync(user) };
         }
 
         public async Task<User?> RegisterAsync(UserDTO request)

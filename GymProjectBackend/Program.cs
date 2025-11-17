@@ -48,6 +48,8 @@ builder.Services.AddDbContext<GymAppDbContext>(options =>
     options.UseNpgsql(fullConnectionString));
 
 builder.Services.AddOpenApi();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRoutineService, RoutineService>();
