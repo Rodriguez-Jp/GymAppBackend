@@ -12,14 +12,14 @@ namespace GymProjectBackend.Controllers
     {
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDTO request)
+        public async Task<ActionResult<SignUpResponseDTO>> Register(UserDTO request)
         {
-            var user = await authService.RegisterAsync(request);
+            var response = await authService.RegisterAsync(request);
 
-            if (user is null)
+            if (response is null)
                 return BadRequest("Username already exists");
 
-            return Ok(user);
+            return Ok(response);
         }
 
         [HttpPost("login")]

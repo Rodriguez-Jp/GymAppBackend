@@ -39,7 +39,15 @@ namespace GymProjectBackend.Services
             { Username = user.Username ,AccessToken = CreateToken(user), RefreshToken = await GenerateAndSaveTokenAsync(user) };
         }
 
-        public async Task<User?> RegisterAsync(UserDTO request)
+        private SignUpResponseDTO CreateSignupResponse(User user)
+        {
+            return new SignUpResponseDTO
+            {
+                username = user.Username, id = user.Id
+            };
+        }
+
+        public async Task<SignUpResponseDTO?> RegisterAsync(UserDTO request)
         {
             if(await userRepository.UserExistAsync(request))
             {
@@ -55,7 +63,7 @@ namespace GymProjectBackend.Services
 
             await userRepository.RegisterAsync(user);
 
-            return user;
+            return CreateSignupResponse(user);
         }
 
         private string CreateToken(User user)
