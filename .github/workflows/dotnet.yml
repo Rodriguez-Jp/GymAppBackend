@@ -34,8 +34,9 @@ jobs:
         with:
           dotnet-version: '9.x'
       
+      # ✅ FIX 1: Usar la versión correcta de dotnet-ef
       - name: Install EF Core tools
-        run: dotnet tool install --global dotnet-ef --version 9.0.0
+        run: dotnet tool install --global dotnet-ef --version 9.*
       
       - name: Restore dependencies
         run: dotnet restore
@@ -43,17 +44,17 @@ jobs:
       - name: Build solution
         run: dotnet build --configuration Release --no-restore
       
+      # ✅ FIX 2: Forzar la connection string correcta
       - name: Run migrations
-        env:
-          DATABASE_URL: postgresql://testuser:testpass@localhost:5432/testdb
         run: |
           dotnet ef database update \
             --project ./GymProjectBackend/GymProjectBackend.csproj \
-            --configuration Release
+            --configuration Release \
+            --connection "Host=localhost;Port=5432;Database=testdb;Username=testuser;Password=testpass"
       
       - name: Run tests
         env:
-          DATABASE_URL: postgresql://testuser:testpass@localhost:5432/testdb
+          ConnectionStrings__DefaultConnection: "Host=localhost;Port=5432;Database=testdb;Username=testuser;Password=testpass"
         run: dotnet test --configuration Release --no-build --logger "trx;LogFileName=TestResults.trx"
       
       - name: Upload test results
