@@ -34,7 +34,6 @@ jobs:
         with:
           dotnet-version: '9.x'
       
-      # ✅ AQUÍ: Instalar EF Core tools
       - name: Install EF Core tools
         run: |
           dotnet new tool-manifest
@@ -46,11 +45,13 @@ jobs:
       - name: Build solution
         run: dotnet build --configuration Release --no-restore
       
-      # ✅ Correr migraciones usando dotnet tool run
       - name: Run migrations
         env:
           DATABASE_URL: postgresql://testuser:testpass@localhost:5432/testdb
-        run: dotnet tool run dotnet-ef database update --configuration Release
+        run: |
+          dotnet tool run dotnet-ef database update \
+            --project ./GymProjectBackend/GymProjectBackend.csproj \
+            --configuration Release
       
       - name: Run tests
         env:
