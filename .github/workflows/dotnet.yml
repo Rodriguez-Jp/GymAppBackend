@@ -39,7 +39,6 @@ jobs:
         with:
           dotnet-version: '9.x'
       
-      # ✅ FIX 1: Usar la versión correcta de dotnet-ef
       - name: Install EF Core tools
         run: dotnet tool install --global dotnet-ef --version 9.*
       
@@ -49,7 +48,6 @@ jobs:
       - name: Build solution
         run: dotnet build --configuration Release --no-restore
       
-      # ✅ FIX 2: Forzar la connection string correcta
       - name: Run migrations
         run: |
           dotnet ef database update \
