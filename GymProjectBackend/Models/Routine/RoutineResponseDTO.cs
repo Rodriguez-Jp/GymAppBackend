@@ -9,5 +9,6 @@ namespace GymProjectBackend.Models.Routine
         public string RoutineName { get; set; }
         public string RoutineDescription { get; set; }
         public List<ExerciseResponseDTO> RoutineExercises { get; set; }
+        //TEST
     }
 }
