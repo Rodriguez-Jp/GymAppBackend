@@ -48,8 +48,12 @@ builder.Services.AddDbContext<GymAppDbContext>(options =>
     options.UseNpgsql(fullConnectionString));
 
 builder.Services.AddOpenApi();
-var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
+if (builder.Environment.IsProduction())
+{
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+}
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRoutineService, RoutineService>();
@@ -62,6 +66,12 @@ builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
 
 
 var app = builder.Build();
+//Run migrations
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<GymAppDbContext>();
+    await dbContext.Database.MigrateAsync();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
