@@ -8,6 +8,7 @@ namespace GymProjectBackend.Entities
         public Guid Id { get; set; } =  Guid.NewGuid();
         public float Weight { get; set; }
         public int Reps { get; set; }
+        public int Sets { get; set; }
 
         //FKs and Navigations
         public Guid RoutineId { get; set; }

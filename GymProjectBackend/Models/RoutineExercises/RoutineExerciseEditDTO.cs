@@ -11,5 +11,6 @@ namespace GymProjectBackend.Models.RoutineExercises
         //public Guid RoutineId { get; set; }
         public required int Reps { get; set; }
         public float Weight { get; set; }
+        public int Sets { get; set; }
     }
 }

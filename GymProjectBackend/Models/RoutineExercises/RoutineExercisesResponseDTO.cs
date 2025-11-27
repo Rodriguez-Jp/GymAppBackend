@@ -9,5 +9,6 @@ namespace GymProjectBackend.Models.RoutineExercises
         public ExerciseResponseDTO Exercise { get; set; }
         public int Reps { get; set; }
         public float Weight { get; set; }
+        public int Sets { get; set; }
     }
 }

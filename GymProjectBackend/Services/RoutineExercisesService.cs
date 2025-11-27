@@ -37,7 +37,8 @@ namespace GymProjectBackend.Services
                 ExerciseId = request.ExerciseId,
                 //Exercise = await exerciseRepository.GetExerciseByIdAsync(request.ExerciseId),
                 Weight = request.Weight,
-                Reps = request.Reps
+                Reps = request.Reps,
+                Sets = request.Sets
             };
 
             if (await routineExercisesRepository.NewRoutineExercise(routineExercises))
@@ -65,7 +66,8 @@ namespace GymProjectBackend.Services
 
             routineExercises.Reps = request.Reps == 0 ? routineExercises.Reps : request.Reps;
             routineExercises.Weight = request.Weight < 0 ? routineExercises.Weight : request.Weight;
-
+            routineExercises.Sets = request.Sets < 0 ? routineExercises.Sets : request.Sets;
+            
             await routineExercisesRepository.SaveChangesAsync();
 
             var response = MapToRoutineExercisesDto(routineExercises);
@@ -107,7 +109,8 @@ namespace GymProjectBackend.Services
                     Description = routineExercises.Exercise.Description
                 },
                 Reps = routineExercises.Reps,
-                Weight = routineExercises.Weight
+                Weight = routineExercises.Weight,
+                Sets = routineExercises.Sets
 
             };
         }
