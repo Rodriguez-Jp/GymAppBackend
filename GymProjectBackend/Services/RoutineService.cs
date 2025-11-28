@@ -2,6 +2,7 @@
 using GymProjectBackend.Entities;
 using GymProjectBackend.Models.Exercise;
 using GymProjectBackend.Models.Routine;
+using GymProjectBackend.Models.RoutineExercises;
 using GymProjectBackend.Repositories;
 
 namespace GymProjectBackend.Services
@@ -115,11 +116,16 @@ namespace GymProjectBackend.Services
                 RoutineName = routine.Name,
                 RoutineDescription = routine.Description,
                 RoutineExercises = routine.routineExercises
-                    .Select(re => new ExerciseResponseDTO
+                    .Select(re => new RoutineExercisesResponseDTO
                     {
-                        Id = re.Exercise.Id,
-                        Name = re.Exercise.Name,
-                        Description = re.Exercise.Description
+                        Exercise = new ExerciseResponseDTO
+                        {
+                            Id = re.ExerciseId,
+                            Name = re.Exercise.Name
+                        },
+                        Sets = re.Sets,
+                        Reps = re.Reps,
+                        Weight = re.Weight
                     })
                     .ToList()
             };
